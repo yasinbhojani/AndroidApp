@@ -1,7 +1,5 @@
 package com.example.myapplication;
 
-import android.graphics.drawable.Drawable;
-
 import java.io.Serializable;
 
 class Book implements Serializable {
