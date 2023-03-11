@@ -1,5 +1,5 @@
 package com.example.myapplication;
-
+// BCrpyt.checkpw(text, hash);
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;

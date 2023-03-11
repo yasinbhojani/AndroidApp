@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:orientation="vertical"
+    tools:context=".SignupForm">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        android:textColor="#323232"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to VPIMSR" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/backwithborder"
+        android:hint="username"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="15dp"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/backwithborder"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="15dp"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/confpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/backwithborder"
+        android:hint="confirm password"
+        android:inputType="textPassword"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="15dp"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/backwithborder"
+        android:hint="contact"
+        android:inputType="number"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="15dp"
+        android:textSize="14sp"
+        android:maxLength="10"/>
+
+    <EditText
+        android:id="@+id/firstname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/backwithborder"
+        android:hint="firstname"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="15dp"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/lastname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/backwithborder"
+        android:hint="lastname"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="15dp"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/signupbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/round_drawable"
+        android:paddingVertical="10dp"
+        android:text="Create Account"
+        android:textAllCaps="false"
+        android:textSize="15sp" android:letterSpacing="0"/>
+
+</LinearLayout>
