@@ -1,9 +1,14 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import org.mindrot.jbcrypt.BCrypt;
+
 
 import androidx.annotation.Nullable;
 
@@ -34,5 +39,53 @@ public class DemoDatabase extends SQLiteOpenHelper {
         val.put("lname", user.lname);
 
         return (int) db.insert("users", null, val);
+    }
+
+    public String findUser(String uname, String pass) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor resultCr = db.rawQuery("SELECT fname, lname, password FROM users WHERE uname = ?", new String[]{uname});
+
+        if (resultCr.getCount() >= 1) {
+            resultCr.moveToFirst();
+            @SuppressLint("Range") String passhash = resultCr.getString(resultCr.getColumnIndex("password"));
+            if (BCrypt.checkpw(pass, passhash)) {
+                @SuppressLint("Range") String fname = resultCr.getString(resultCr.getColumnIndex("fname"));
+                @SuppressLint("Range") String lname = resultCr.getString(resultCr.getColumnIndex("lname"));
+                resultCr.close();
+                return fname + " " + lname;
+            } else {
+                resultCr.close();
+                return "";
+            }
+        } else {
+            resultCr.close();
+            return "";
+        }
+    }
+
+    public User [] getAllUsers() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor resultCr = db.rawQuery("SELECT * FROM users", null);
+
+        String uname, fname, lname, password;
+        long contact;
+
+        int len = resultCr.getCount();
+        User [] users = new User[len];
+        resultCr.moveToFirst();
+
+        for(int i = 0; i < len; i++) {
+            uname = resultCr.getString(resultCr.getColumnIndexOrThrow("uname"));
+            fname = resultCr.getString(resultCr.getColumnIndexOrThrow("fname"));
+            lname = resultCr.getString(resultCr.getColumnIndexOrThrow("lname"));
+            password = resultCr.getString(resultCr.getColumnIndexOrThrow("password"));
+            contact = resultCr.getLong(resultCr.getColumnIndexOrThrow("contact"));
+
+            users[i] = new User(uname, fname, lname, password, contact);
+            resultCr.moveToNext();
+        }
+
+        resultCr.close();
+        return users;
     }
 }

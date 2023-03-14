@@ -37,6 +37,5 @@ public class Book_Data extends AppCompatActivity {
         book_price.setText("₹" + data.book_price);
         book_rating.setText(String.valueOf(data.book_rating));
         book_summary.setText(data.book_summary);
-
     }
 }

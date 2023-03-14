@@ -64,10 +64,10 @@
         android:background="@drawable/backwithborder"
         android:hint="contact"
         android:inputType="number"
+        android:maxLength="10"
         android:paddingHorizontal="10dp"
         android:paddingVertical="15dp"
-        android:textSize="14sp"
-        android:maxLength="10"/>
+        android:textSize="14sp" />
 
     <EditText
         android:id="@+id/firstname"
@@ -97,9 +97,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:background="@drawable/round_drawable"
+        android:letterSpacing="0"
         android:paddingVertical="10dp"
         android:text="Create Account"
         android:textAllCaps="false"
-        android:textSize="15sp" android:letterSpacing="0"/>
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/loginredirect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:text="login instead"
+        android:textColor="#0000FF"
+        android:textSize="10sp" />
 
 </LinearLayout>

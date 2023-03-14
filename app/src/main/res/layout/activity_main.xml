@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:orientation="vertical"
-    >
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -15,56 +13,63 @@
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        app:srcCompat="@drawable/vplogo"
-    />
+        app:srcCompat="@drawable/vplogo" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log In"
-        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:paddingHorizontal="50dp"
         android:paddingVertical="20dp"
+        android:text="Log In"
         android:textColor="@color/teal_700"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
-    />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Username"
         android:layout_margin="20dp"
-        android:inputType="text"
         android:drawableLeft="@drawable/person"
         android:drawablePadding="20dp"
-    />
+        android:hint="Enter Username"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Password"
         android:layout_margin="20dp"
-        android:inputType="textPassword"
         android:drawableLeft="@drawable/lock"
         android:drawablePadding="20dp"
-    />
+        android:hint="Enter Password"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/loginbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:paddingHorizontal="40dp"
         android:paddingVertical="15dp"
         android:text="LOG IN"
-        android:textSize="15sp"
-        android:textStyle="bold"
         android:textColor="@color/white"
-    />
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/signupredirect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:text="signup instead"
+        android:textColor="#0000ff"
+        android:textSize="10sp"
+
+        />
 
 </LinearLayout>

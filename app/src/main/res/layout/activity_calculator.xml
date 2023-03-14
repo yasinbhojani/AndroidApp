@@ -88,11 +88,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="70dp"
         android:textAlignment="center"
         android:textSize="20sp"
-        android:textColor="#E0E0E0"
+        android:textColor="#AAAAAA"
         android:textStyle="bold"
+        android:layout_margin="20dp"
     />
+
+
+    <Button
+        android:id="@+id/logoutbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="logout"
+        />
 
 </LinearLayout>

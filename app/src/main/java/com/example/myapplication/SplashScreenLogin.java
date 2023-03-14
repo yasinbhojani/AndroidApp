@@ -18,11 +18,9 @@ public class SplashScreenLogin extends AppCompatActivity {
 
         tw1 = findViewById(R.id.textviewUname);
 
-        Intent fromAct = getIntent();
-        String username = fromAct.getStringExtra("username");
-        int user_id = fromAct.getIntExtra("user_id", 0);
+        String username = getIntent().getStringExtra("username");
 
-        tw1.setText("user_id: " + user_id + "\n" + "username: " + username);
+        tw1.setText("Name: " + username);
 
         if(getSupportActionBar() != null) {
             getSupportActionBar().hide();
@@ -33,7 +31,6 @@ public class SplashScreenLogin extends AppCompatActivity {
             @Override
             public void run() {
                 Intent i = new Intent(SplashScreenLogin.this, Calculator.class);
-                i.putExtra("user_id", user_id);
                 i.putExtra("username", username);
                 startActivity(i);
             }
