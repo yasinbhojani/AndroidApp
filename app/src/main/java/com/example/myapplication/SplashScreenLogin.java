@@ -30,7 +30,7 @@ public class SplashScreenLogin extends AppCompatActivity {
         h.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(SplashScreenLogin.this, Calculator.class);
+                Intent i = new Intent(SplashScreenLogin.this, HomeScreen.class);
                 i.putExtra("username", username);
                 startActivity(i);
             }

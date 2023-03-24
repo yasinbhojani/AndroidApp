@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class Calculator extends AppCompatActivity {
 
     EditText edittext1, edittext2;
-    Button add, sub, mul, div, logoutbtn;
+    Button add, sub, mul, div;
     TextView textview1;
 
     double getEditText1() {
@@ -38,17 +38,12 @@ public class Calculator extends AppCompatActivity {
         setContentView(R.layout.activity_calculator);
         getSupportActionBar().setTitle("Calculator");
 
-        Intent fromAct = getIntent();
-        String username = fromAct.getStringExtra("username");
 
         add = findViewById(R.id.addbtn);
         sub = findViewById(R.id.subbtn);
         mul = findViewById(R.id.mulbtn);
         div = findViewById(R.id.divbtn);
-        logoutbtn = findViewById(R.id.logoutbtn);
 
-        textview1 = findViewById(R.id.textview1);
-        textview1.setText("Name: " + username);
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,14 +78,6 @@ public class Calculator extends AppCompatActivity {
                 } catch (Exception e) {
                     makeToast("Cannot Divide Number by 0");
                 }
-            }
-        });
-
-        logoutbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferencesHandler.deleteAllDefaults(getApplicationContext());
-                startActivity(new Intent(Calculator.this, SignupForm.class));
             }
         });
 

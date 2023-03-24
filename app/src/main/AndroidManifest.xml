@@ -12,8 +12,8 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".SignupForm"
-            android:exported="true">
+            android:name=".HomeScreen"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,10 +21,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Book_Info"
+            android:name=".SignupForm"
             android:exported="false" />
         <activity
-            android:name=".GridLayoutDemo"
+            android:name=".AllUserData"
+            android:exported="true" />
+        <activity
+            android:name=".Book_Info"
             android:exported="false" />
         <activity
             android:name=".Book_Data"
