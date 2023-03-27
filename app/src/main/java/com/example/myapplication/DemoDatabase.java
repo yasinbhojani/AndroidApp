@@ -63,7 +63,7 @@ public class DemoDatabase extends SQLiteOpenHelper {
         }
     }
 
-    public User [] getAllUsers() {
+    public User[] getAllUsers() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor resultCr = db.rawQuery("SELECT * FROM users", null);
 
@@ -71,10 +71,10 @@ public class DemoDatabase extends SQLiteOpenHelper {
         long contact;
 
         int len = resultCr.getCount();
-        User [] users = new User[len];
+        User[] users = new User[len];
         resultCr.moveToFirst();
 
-        for(int i = 0; i < len; i++) {
+        for (int i = 0; i < len; i++) {
             uname = resultCr.getString(resultCr.getColumnIndexOrThrow("uname"));
             fname = resultCr.getString(resultCr.getColumnIndexOrThrow("fname"));
             lname = resultCr.getString(resultCr.getColumnIndexOrThrow("lname"));
@@ -87,5 +87,46 @@ public class DemoDatabase extends SQLiteOpenHelper {
 
         resultCr.close();
         return users;
+    }
+
+    public boolean editUser(User user) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("fname", user.fname);
+        cv.put("lname", user.lname);
+        cv.put("contact", user.contact);
+
+        db.update("users", cv, "uname = ?", new String[]{user.uname});
+        return true;
+
+//        db.execSQL("UPDATE users SET fname = ?, lname = ?, contact = '" + user.contact + "' WHERE uname = ?", new String[]{user.fname, user.lname, user.uname});
+    }
+
+    public User getUser(String find_uname) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor result = db.rawQuery("SELECT * FROM users WHERE uname = ?", new String[]{find_uname});
+        String uname, fname, lname, password;
+        long contact;
+        User user;
+
+        result.moveToFirst();
+
+        uname = result.getString(result.getColumnIndexOrThrow("uname"));
+        fname = result.getString(result.getColumnIndexOrThrow("fname"));
+        lname = result.getString(result.getColumnIndexOrThrow("lname"));
+        password = result.getString(result.getColumnIndexOrThrow("password"));
+        contact = result.getLong(result.getColumnIndexOrThrow("contact"));
+
+        user = new User(uname, fname, lname, password, contact);
+
+        result.close();
+        return user;
+    }
+
+    public boolean removeUser(String uname) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete("users", "uname = ?", new String[]{uname});
+
+        return true;
     }
 }

@@ -17,6 +17,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/loggedinas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Logged in as: " />
@@ -69,6 +70,15 @@
             android:height="70dp"
             android:maxWidth="130dp"
             android:text="Book Store (Grid)" />
+
+        <Button
+            android:id="@+id/editprofilebtn"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="10dp"
+            android:height="70dp"
+            android:maxWidth="130dp"
+            android:text="Edit Profile" />
     </GridLayout>
 
 
