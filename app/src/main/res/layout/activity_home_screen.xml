@@ -79,6 +79,14 @@
             android:height="70dp"
             android:maxWidth="130dp"
             android:text="Edit Profile" />
+        <Button
+            android:id="@+id/callmessagebtn"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="10dp"
+            android:height="70dp"
+            android:maxWidth="130dp"
+            android:text="Call/Message" />
     </GridLayout>
 
 

@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class HomeScreen extends AppCompatActivity {
 
-    Button logoutbtn, calcbtn, allrecordsbtn, bookstorelinearbtn, bookstoregridbtn, editprofilebtn;
+    Button logoutbtn, calcbtn, allrecordsbtn, bookstorelinearbtn, bookstoregridbtn, editprofilebtn, callmessagebtn;
     TextView loggedinas;
 
     @Override
@@ -29,6 +29,7 @@ public class HomeScreen extends AppCompatActivity {
         bookstoregridbtn = findViewById(R.id.bookstoregridbtn);
         editprofilebtn = findViewById(R.id.editprofilebtn);
         loggedinas = findViewById(R.id.loggedinas);
+        callmessagebtn = findViewById(R.id.callmessagebtn);
 
 
         String username = SharedPreferencesHandler.getStringDefaults("name", getApplicationContext());
@@ -75,6 +76,13 @@ public class HomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), EditProfile.class));
+            }
+        });
+
+        callmessagebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PhoneMessage.class));
             }
         });
     }
