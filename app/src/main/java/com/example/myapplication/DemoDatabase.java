@@ -98,8 +98,6 @@ public class DemoDatabase extends SQLiteOpenHelper {
 
         db.update("users", cv, "uname = ?", new String[]{user.uname});
         return true;
-
-//        db.execSQL("UPDATE users SET fname = ?, lname = ?, contact = '" + user.contact + "' WHERE uname = ?", new String[]{user.fname, user.lname, user.uname});
     }
 
     public User getUser(String find_uname) {

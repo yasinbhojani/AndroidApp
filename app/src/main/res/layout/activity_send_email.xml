@@ -4,60 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
     android:orientation="vertical"
-    tools:context=".PhoneMessage">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Phone"
-        android:textColor="#232323"
-        android:textSize="28sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/edphoneno"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="Phone Number" />
-
-    <Button
-        android:id="@+id/phonebtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Call" />
+    android:padding="10dp"
+    tools:context=".SendEmail">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Message"
+        android:text="Email"
         android:textColor="#232323"
         android:textSize="28sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/edmsgno"
+        android:id="@+id/recmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="Number" />
+        android:hint="Recipient Email" />
 
     <EditText
-        android:id="@+id/edmessage"
+        android:id="@+id/subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Subject" />
+
+    <EditText
+        android:id="@+id/mailmessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="Message" />
 
     <Button
-        android:id="@+id/messagebtn"
+        android:id="@+id/mailbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Message" />
+        android:text="Send Mail"
+        />
 
 </LinearLayout>
