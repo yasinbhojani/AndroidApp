@@ -48,7 +48,8 @@ public class Practice_SendEmail extends AppCompatActivity {
 
     private void sendEmail(String to_mail, String subject, String body) {
         Intent i = new Intent(Intent.ACTION_SENDTO);
-        i.setData(Uri.parse("mailto:" + to_mail));
+        i.setData(Uri.parse("mailto:"));
+        i.putExtra(Intent.EXTRA_EMAIL, new String[]{to_mail});
         i.putExtra(Intent.EXTRA_SUBJECT, subject);
         i.putExtra(Intent.EXTRA_TEXT, body);
 
