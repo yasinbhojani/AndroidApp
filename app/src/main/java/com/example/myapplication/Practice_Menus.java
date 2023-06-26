@@ -42,6 +42,12 @@ public class Practice_Menus extends AppCompatActivity {
             public void onClick(View view) {
                 PopupMenu popup = new PopupMenu(Practice_Menus.this, view);
                 popup.inflate(R.menu.sample_menu);
+//                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+//                    @Override
+//                    public boolean onMenuItemClick(MenuItem menuItem) {
+//                        return false;
+//                    }
+//                });
                 popup.show();
             }
         });

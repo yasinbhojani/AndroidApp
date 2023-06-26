@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -39,7 +40,6 @@ public class SendEmail extends AppCompatActivity {
                 } else {
                     sendEmail(recipientEmail, sub, message);
                 }
-
             }
         });
     }

@@ -25,7 +25,6 @@ public class Practice_Database extends SQLiteOpenHelper {
 
     }
 
-
     public int insertUser(String uname) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues val = new ContentValues();
@@ -50,5 +49,17 @@ public class Practice_Database extends SQLiteOpenHelper {
 
         results.close();
         return users;
+    }
+
+    public void thanos() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete("users", null, null);
+    }
+
+    public void ironman(String name) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("uname", name);
+        db.update("users", cv, "uname = ?", new String[]{"sadiq"});
     }
 }

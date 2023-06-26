@@ -14,7 +14,7 @@ public class Practice_DBUser extends AppCompatActivity {
 
     EditText edit_t;
     TextView show_users;
-    Button insert_user;
+    Button insert_user, danger;
     Practice_Database db;
 
 
@@ -26,6 +26,7 @@ public class Practice_DBUser extends AppCompatActivity {
         edit_t = (EditText) findViewById(R.id.edit_t);
         insert_user = (Button) findViewById(R.id.insert_user);
         show_users = (TextView) findViewById(R.id.show_users);
+        danger = (Button) findViewById(R.id.danger);
 
         db = new Practice_Database(getApplicationContext());
 
@@ -47,6 +48,14 @@ public class Practice_DBUser extends AppCompatActivity {
                     Toast.makeText(Practice_DBUser.this, "Values inserted successfully", Toast.LENGTH_SHORT).show();
                     edit_t.setText("");
                 }
+            }
+        });
+
+        danger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                db.thanos();
+                db.ironman("LOL");
             }
         });
     }
